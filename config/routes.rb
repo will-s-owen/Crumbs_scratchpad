@@ -1,6 +1,10 @@
 Test2::Application.routes.draw do
-  get "pages/home"
 
+  root :to => 'pages#home'
+  match '/home', :to => 'pages#home'
+  match '/search', :to => 'pages#search'
+
+  get "pages/home"
   get "pages/search"
 
   # The priority is based upon order of creation:
