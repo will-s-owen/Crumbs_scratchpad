@@ -2,7 +2,6 @@
   <% if @thing.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@thing.errors.count, "error") %> prohibited this thing from being saved:</h2>
-
       <ul>
       <% @thing.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -10,11 +9,22 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
+	<section>
+	  <div class="field">
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	  </div>
+		<h2>Parameters</h2>
+		<% @thing.parameter_values.each do |v| %>
+			<%= f.fields_for :parameter_values, v do |p_f| %>
+				<div class="field">
+					<%= p_f.label :value, v.parameter_type.name %>
+					<%= p_f.text_field :value %>
+					Delete: <%= p_f.check_box :_destroy %>
+				</div>
+			<% end %>
+		<% end %>
+	</section>
   <div class="actions">
     <%= f.submit %>
   </div>
