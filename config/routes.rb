@@ -1,5 +1,7 @@
 Test2::Application.routes.draw do
 
+  resources :things
+
   root :to => 'pages#home'
   match '/home', :to => 'pages#home'
   match '/search', :to => 'pages#search'

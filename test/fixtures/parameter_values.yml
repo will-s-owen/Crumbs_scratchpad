@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  value: Value1
+  parameter_type_id: 1
+  thing_id: 1
+
+two:
+  value: Value2
+  parameter_type_id: 2
+  thing_id: 1

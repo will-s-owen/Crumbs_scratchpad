@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+	<%= @thing.name %><br>
+	<section class="round">
+	<% @thing.parameter_values.each do |param| %>
+	<tr>
+		<td><b><%= param.parameter_type.name %>:</b> </td>
+		<td><%= param.value %></td>
+	</tr><br>
+	<% end %>
+	</section>
+</p>
+
+
+<%= link_to 'Edit', edit_thing_path(@thing) %> |
+<%= link_to 'Back', things_path %>
