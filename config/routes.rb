@@ -1,13 +1,14 @@
 Test2::Application.routes.draw do
 
+  resources :searches
   resources :things
 
   root :to => 'pages#home'
   match '/home', :to => 'pages#home'
-  match '/search', :to => 'pages#search'
+  match '/search', :to => 'searches#new'
 
   get "pages/home"
-  get "pages/search"
+  #get "pages/search"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

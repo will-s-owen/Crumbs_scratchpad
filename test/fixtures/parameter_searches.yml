@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  search_id: 1
+  parameter_type_id: 1
+  value: MyString
+
+two:
+  search_id: 1
+  parameter_type_id: 1
+  value: MyString

@@ -10,10 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110520223402) do
+ActiveRecord::Schema.define(:version => 20110521163755) do
+
+  create_table "parameter_searches", :force => true do |t|
+    t.integer  "search_id"
+    t.integer  "parameter_type_id"
+    t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "parameter_types", :force => true do |t|
     t.string   "name"
+    t.integer  "searchable"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -22,6 +31,11 @@ ActiveRecord::Schema.define(:version => 20110520223402) do
     t.string   "value"
     t.integer  "parameter_type_id"
     t.integer  "thing_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "searches", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

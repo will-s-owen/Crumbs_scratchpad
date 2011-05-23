@@ -2,6 +2,10 @@
 	width: 710px;
 }
 
+.error {
+	color: #B50217;
+}
+
 body {
 	background: #0E7DB2;
 	color: #5A0084;

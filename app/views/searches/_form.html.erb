@@ -1,0 +1,31 @@
+<%= form_for(@search) do |f| %>
+	<% if @search.errors.any? %>
+	<div id="error_explanation">
+	  <h2><%= pluralize(@search.errors.count, "error") %> prohibited this search from being saved:</h2>
+
+	  <ul>
+	  <% @search.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+	  <% end %>
+	  </ul>
+	</div>
+	<% end %>
+
+	<section>
+		<h2>Parameters</h2>
+		<% if @types.nil? %>
+			NO PARAMETERS ARE SEARCHABLE
+		<% else %>
+			<% @types.each do |t| %>
+				<%= fields_for :parameter_searchs do |p_f| %>
+					<%= render 'parameter_search_fields', :f => p_f %>
+					<%= link_to_add_fields t.name, f, :parameter_searchs %>
+				<% end %>
+			<% end %>
+		<% end %>
+	</section> 
+  
+	<div class="actions">
+	<%= f.submit %>
+	</div>
+<% end %>
